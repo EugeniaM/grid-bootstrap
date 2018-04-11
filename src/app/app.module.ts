@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { GridModule } from './grid/grid.module';
+import { MyButtonModule } from './my-button/my-button.module'
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { GridModule } from './grid/grid.module';
   ],
   imports: [
     BrowserModule,
-    GridModule
+    GridModule,
+    MyButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

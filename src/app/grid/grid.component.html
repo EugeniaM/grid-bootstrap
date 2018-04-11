@@ -1,5 +1,11 @@
 <table
-  class="table"
+  class="table table-borderless"
   [ngClass]="{'table-striped': strippedTable}">
-  <thead app-grid-header [headerConfig]="headerConfig"></thead>
+  <thead
+    app-grid-header
+    [headerConfig]="headerConfig"
+    [sortConfig]="sortConfig"
+    (onSortChanged)="changeSort($event)">
+  </thead>
+  <ng-content></ng-content>
 </table>

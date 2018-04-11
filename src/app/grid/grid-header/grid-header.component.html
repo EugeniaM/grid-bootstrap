@@ -1,7 +1,11 @@
 <tr>
-  <!--<th scope="col"></th>-->
-  <!--<th scope="col">First</th>-->
-  <!--<th scope="col">Last</th>-->
-  <!--<th scope="col">Handle</th>-->
-  <th scope="col" *ngFor="let labelObject of headerConfig">{{ labelObject.name }}</th>
+  <th
+    scope="col"
+    *ngFor="let labelObject of headerConfig"
+    (click)="changeSort(labelObject)"
+    [ngStyle]="{width: labelObject.width}"
+  >
+    {{ labelObject.name }}
+    <app-icon *ngIf="sortConfig.key === labelObject.key" [type]="sortConfig.direction ? 'asc' : 'desc'"></app-icon>
+  </th>
 </tr>

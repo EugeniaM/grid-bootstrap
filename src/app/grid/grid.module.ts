@@ -3,9 +3,12 @@ import { CommonModule } from '@angular/common';
 import { GridComponent } from './grid.component';
 import { GridHeaderComponent } from './grid-header/grid-header.component';
 
+import { IconModule } from '../icon/icon.module';
+
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    IconModule
   ],
   declarations: [
     GridComponent,

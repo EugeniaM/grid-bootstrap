@@ -8,16 +8,85 @@ import { Component } from '@angular/core';
 export class AppComponent {
   headerConfig = [
     {
-      name: ''
+      name: '',
+      sortable: false,
+      width: '16%'
     },
     {
-      name: 'User'
+      name: 'User',
+      sortable: true,
+      key: 'user',
+      width: '28%'
     },
     {
-      name: 'Gender'
+      name: 'Gender',
+      sortable: true,
+      key: 'gender',
+      width: '28%'
     },
     {
-      name: 'Company'
+      name: 'Company',
+      sortable: true,
+      key: 'company',
+      width: '28%'
     },
   ];
+
+  sortConfig = {
+    key: 'user',
+    direction: true
+  }
+
+  tableBodyConfig = [
+    {
+      button: {
+        title: 'TEST'
+      },
+      user: {
+        value: 'Eugenia'
+      },
+      gender: {
+        value: 'female'
+      },
+      company: {
+        value: 'EPAM'
+      }
+    },
+    {
+      button: {
+        title: 'ASDF'
+      },
+      user: {
+        value: 'Tatiana'
+      },
+      gender: {
+        value: 'female'
+      },
+      company: {
+        value: 'Murka'
+      }
+    },
+    {
+      button: {
+        title: 'QWER'
+      },
+      user: {
+        value: 'Eugene'
+      },
+      gender: {
+        value: 'male'
+      },
+      company: {
+        value: 'Yalantis'
+      }
+    },
+  ];
+
+  buttonClick(data) {
+    console.log('!!! ===>', data);
+  }
+
+  sort(event: { key: string, direction: boolean }) {
+    console.log(event);
+  }
 }

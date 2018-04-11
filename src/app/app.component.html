@@ -1,32 +1,15 @@
 <app-grid
-  [headerConfig]="headerConfig">
-  <!--<thead app-grid-header [headerConfig]="headerConfig">-->
-    <!--<tr>-->
-      <!--<th scope="col"></th>-->
-      <!--<th scope="col">First</th>-->
-      <!--<th scope="col">Last</th>-->
-      <!--<th scope="col">Handle</th>-->
-    <!--</tr>-->
-  <!--</thead>-->
-  <!--<app-grid-header [headerConfig]="headerConfig"></app-grid-header>-->
-  <!--<tbody>-->
-  <!--<tr>-->
-    <!--<th scope="row">1</th>-->
-    <!--<td>Mark</td>-->
-    <!--<td>Otto</td>-->
-    <!--<td>@mdo</td>-->
-  <!--</tr>-->
-  <!--<tr>-->
-    <!--<th scope="row">2</th>-->
-    <!--<td>Jacob</td>-->
-    <!--<td>Thornton</td>-->
-    <!--<td>@fat</td>-->
-  <!--</tr>-->
-  <!--<tr>-->
-    <!--<th scope="row">3</th>-->
-    <!--<td>Larry</td>-->
-    <!--<td>the Bird</td>-->
-    <!--<td>@twitter</td>-->
-  <!--</tr>-->
-  <!--</tbody>-->
+  [headerConfig]="headerConfig"
+  [sortConfig]="sortConfig"
+  (onSortChanged)="sort($event)">
+
+  <tr *ngFor="let row of tableBodyConfig">
+    <td>
+      <app-my-button (click)="buttonClick(row)" [title]="row.button.title"></app-my-button>
+    </td>
+    <td>{{ row.user.value }}</td>
+    <td>{{ row.gender.value }}</td>
+    <td>{{ row.company.value }}</td>
+  </tr>
+
 </app-grid>
